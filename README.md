@@ -1,2 +1,2 @@
 # SnapSPerF
-Module Magisk Performance For Gaming l
+Module Magisk Performance For Gaming 
