@@ -1,7 +1,7 @@
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "versionCode": 100,
-  "zipUrl": "https://github.com/ZUANVFX01/SnapSPerF/releases/download/SnapSperF/SnapSPerf-.InGreS.2.0.zip",
+  "zipUrl": "https://github.com/ZUANVFX01/SnapSPerF/releases/download/SnapSperF/SnapSPerf-.InGreS.2.0.2.zip",
   "changelog": "https://github.com/ZUANVFX01/SnapSPerF/blob/main/CHANGELOG.md",
   "minMagisk": "24.0",
   "id": "SnapSPerF",
