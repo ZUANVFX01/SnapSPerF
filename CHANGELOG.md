@@ -1,5 +1,20 @@
-# v3.1.0
-- Fix Memek mu
-# v3.0.0
-- Fix UI, New UI, CMD DOWNSCALE Fix, Apply New Install.sh update, IRQ Performance for some kernels, Chose disable thermal or not in install with chose fix flashlight in your device if can't use when you use disabled thermal brutal, new system prop, big update after beta and 1.0.0, 2.0.0 in ingres edition, now you can try my new module magisk performance for your phone snapdragon device need kernel 5.10+ or higher, 4.xx can't but some codes may not work enjoy.
-Feature? Join my telegram @SnapSPerF
+# SnapSPerF Changelog
+
+## v3.1.0
+- Fix *Memek mu*
+
+## v3.0.0
+- New UI and UI Fixes
+- CMD DOWNSCALE fix
+- Updated `install.sh`
+- Added IRQ performance tweaks (for some kernels)
+- Option to disable thermal throttling during install
+- Option to fix flashlight issue when thermal is disabled (brutal mode)
+- New system properties added
+- Major update after versions 1.0.0, 2.0.0 (Ingres Edition)
+- Released new **Magisk Performance Module**:
+  - Designed for Snapdragon devices
+  - Requires kernel **5.10+** (some code may not work on 4.xx)
+
+**Features?**  
+Join the Telegram: [@SnapSPerF](https://t.me/SnapSPerF)
