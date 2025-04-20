@@ -2,7 +2,7 @@
   "version": "3.1.0",
   "versionCode": 310,
   "zipUrl": "https://github.com/ZUANVFX01/SnapSPerF/releases/download/V3.1.0/SnapSPerf-.Official.3.1.0.zip",
-  "changelog": "https://github.com/ZUANVFX01/SnapSPerF/blob/main/CHANGELOG.md",
+  "changelog": "https://raw.githubusercontent.com/ZUANVFX01/SnapSPerF/refs/heads/main/CHANGELOG.md",
   "minMagisk": "24.0",
   "id": "SnapSPerF",
   "name": "SnapSPerf - Official",
