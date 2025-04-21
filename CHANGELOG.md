@@ -1,7 +1,26 @@
 # SnapSPerF Changelog
 
 ## v3.1.0
-- Fix *Memek mu*
+- Kernel Max Threads
+•Choose mode
+Kernel Entropy Maximum
+•Make maximum entropy kernel 
+Nr Request
+•Choose KB
+Read Ahead
+•Choose KB
+Improve UI
+•New Style Text
+Fstrim
+•Clear empty block
+Disabled Thermal PS + HAL2.0
+•Turn off/On Thermal process status
+Watermark scale factor
+•Adjust
+Vfs cache pressure
+•Adjust
+Swappiness level
+•Adjust
 
 ## v3.0.0
 - New UI and UI Fixes
