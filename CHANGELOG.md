@@ -1,5 +1,19 @@
 # SnapSPerF Changelog
 
+## v4.1.0
+- Fix Enabled Fake Temp 5°c
+- Fake your devices temperature
+- Add hardware composer
+- Efficient rendering via GPU, reduce CPU load.
+- Fix Power keeper xioami perf
+- This feature for xioami rom miui/hyperos
+- Fix Disabled Ufshc Power Saving
+- Turn off ufshc power saving
+- Optimized size
+
+Power keeper xioami perf
+This feature for xioami rom miui/hyperos
+
 ## v4.0.0
 - Update Features WebUI
 - New UI Styles 
