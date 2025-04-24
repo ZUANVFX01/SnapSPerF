@@ -22,3 +22,4 @@ Other Spesial thanks
 • [Topjohnwu for making Magisk](https://github.com/topjohnwu)
 Thanks Android Materials UI/UX
 © VipexArtz Panzoid 2016 - 2021 Intro
+© Insomniax Panzoid
