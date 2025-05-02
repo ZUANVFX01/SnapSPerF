@@ -1,6 +1,7 @@
 ## SnapSperF Official
 
 New update compatible with WebUI
+APK Manager
 
 This Magisk module optimizes memory management (VM), CPU, GPU, UFSHC, ZRAM, I/O and kernel performance to improve speed and responsiveness without sacrificing stability.
 
