@@ -1,0 +1,37 @@
+#BY @ZuanVFX TELEGRAM @ZUANFILES2
+#Hwui @ZuanVFX
+persist.sys.dalvik.vm.lib.2=libart.so
+ro.hwui.texture_cache_flushrate=0.1
+
+#DALVIK @ZuanVFX
+dalvik.vm.heapsize=512m
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapmaxfree=8m
+dalvik.vm.heapminfree=4m
+dalvik.vm.heaptargetutilization=0.4
+dalvik.vm.appimageformat=lz4
+
+#(Surfaceflinger)
+debug.sf.disable_client_composition_cache=1
+debug.sf.latch_unsignaled=1
+debug.sf.auto_latch_unsignaled=0
+debug.sf.disable_backpressure=1
+debug.sf.enable_gl_backpressure=0
+debug.sf.set_idle_timer_ms=0
+debug.sf.hw=1
+ro.surface_flinger.set_idle_timer_ms=0
+ro.surface_flinger.set_touch_timer_ms=0
+debug.hwui.skia_use_perfetto_track_events=false
+persist.sys.spc.cpulimit.enabled=false
+
+#EGL HARDWARE
+debug.egl.hw=1
+#Forfe Software Disable
+persist.sys.force_sw_gles=0
+#Miui/Hyperos
+persist.sys.miui.sf_cores=0-7
+#Scroll
+ro.vendor.perf.scroll_opt=1
+#other
+dev.pm.dyn_samplingrate=1

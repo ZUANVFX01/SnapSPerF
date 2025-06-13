@@ -1,0 +1,9 @@
+#!/system/bin/sh
+MODDIR=${0%/*}
+
+
+
+
+
+
+su -lp 2000 -c "cmd notification post -S bigtext -t '𝐒𝐧𝐚𝐩𝐒𝐏𝐞𝐫𝐟 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐂𝐨𝐦𝐩𝐥𝐞𝐭𝐞' 'Tag' 'Performance Module magisk for snapdragon experience xperience thank you for trying our magisk module'"
