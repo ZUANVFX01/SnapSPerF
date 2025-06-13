@@ -20,3 +20,9 @@ Other Spesial thanks
 Thanks Android Materials UI/UX
 © VipexArtz Panzoid 2016 - 2021 Intro
 © Insomniax Panzoid
+
+
+
+## ⚠️ License Notice
+- You are free to use, modify, and distribute this module **ONLY** with proper credit to the original author.
+- Using this module without giving credit is a violation of the license.
