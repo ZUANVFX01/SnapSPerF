@@ -1,0 +1,8 @@
+id=SnapSPerf
+name=SnapSPerf - Official
+version=4.2.0 (Global Edition)
+versionCode=420
+author=@ZuanVFX
+description=Performance For Your Qualcomm Snapdragon Kernel 4.xx/5.10+
+Device=Snapdragon
+updateJson=https://raw.githubusercontent.com/ZUANVFX01/SnapSPerF/main/update.json
