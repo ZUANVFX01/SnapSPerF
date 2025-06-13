@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SnapSPerf Neumorphic UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <link href="/style.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="/mmrl/insets.css" />
+  <script type="module" src="/script.js" defer></script>
+  <style>
+    body {
+      background: #e0e5ec;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px 10px 120px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    
+    h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card3 {
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+  padding: 25px;
+  width: 85%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto 30px;
+}
+    
+    .card {
+      background: #e0e5ec;
+      border-radius: 20px;
+      box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+    
+    .card2 {
+      background: #e0e5ec;
+      border-radius: 20px;
+      box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+      padding: 20px;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 30px;
+    }
+
+    
+    .toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0;
+    }
+
+    .toggle label {
+      font-size: 16px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 24px;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #4cd137;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+
+    .tab-section {
+      display: none;
+    }
+
+    .tab-section.active {
+      display: block;
+    }
+
+    .bottom-nav-material {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #e0e5ec;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 20px;
+      color: #7b8ca7;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .nav-item.active {
+      color: #4cd137;
+    }
+
+    .material-icons {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .fab-button {
+      position: absolute;
+      top: -15px;
+      background: #4cd137;
+      color: white;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 12px 12px rgba(0,0,0,0.25);
+      transition: 0.2s ease;
+    }
+  </style>
+  
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+@keyframes pulseText {
+  0% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+</style>
+  
+  <style>
+  .fade-out {
+    animation: fadeOut 1s forwards;
+  }
+  .fade-in {
+    animation: fadeIn 1s forwards;
+  }
+
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+
+  
+</head><!-- Splash Screen -->
+<div id="splash-screen" style="
+  background-image: url('header2-bg.webp');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+">
+<h1 class="text-4xl font-bold mb-4 animate-flash">
+  Welcome to WebUI SnapSPerf <span style="color: red;">Official</span>
+</h1>
+  <p class="text-lg mb-6">Your Ultimate Android Performance Module</p>
+  <button onclick="enterApp()" style="
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  ">Let’s Go</button>
+</div>
+
+<style>
+@keyframes flashIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: brightness(2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: brightness(1.5);
+  }
+  70% {
+    transform: scale(0.95);
+    filter: brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+.animate-flash {
+  animation: flashIn 1.5s ease-out forwards;
+}
+</style>
+
+<!-- Main Content -->
+<div id="main-content" style="display: none;">
+<!-- Main Content -->
+<header style="background-image: url('header-bg.webp'); background-size: cover; background-position: center;" class="card2 ml-3 mt-3 p-4 sticky top-0 z-50 shadow-lg rounded-xl flex items-center gap-4">
+  <!-- Profile Picture -->
+  <div class="shrink-0">
+    <img src="snapsperf.webp" alt="SnapSPerf Logo" class="h-24 w-24 rounded-full border-4 border-white shadow-md">
+  </div>
+
+  <!-- Info Text -->
+  <div>
+    <h1 class="text-xl font-bold">
+      <span style="color: white;">Snap</span><span style="color: #87CEFA;">SPerF Official</span>
+    </h1>
+        <p id="moduleVer" style="
+      font-size: 0.875rem;
+      font-weight: bold;
+      background: linear-gradient(270deg, white, #f87171, #dc2626, white);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: merahPutihAnim 4s ease infinite;
+      font-family: 'Orbitron', sans-serif;
+    ">
+      Error loading version
+    </p>
+
+    
+    
+<!-- Animasi Gradient Loading -->
+<style>
+@keyframes merahPutihAnim {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+</style>
+  </div>
+</header>
+
+
+
+<!-- Orbitron Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <main class="flex-grow pt-1">
+  <!-- Injected: kamu bisa paste isi asli <main> dan <nav> kamu di sini -->
+</div>
+<script>
+  function enterApp() {
+    document.getElementById('splash-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+  }
+</script>
+
+<script>
+  function enterApp() {
+    const splash = document.getElementById('splash-screen');
+    const main = document.getElementById('main-content');
+
+    splash.classList.add('fade-out');
+    main.classList.add('fade-in');
+    main.style.display = 'block';
+
+    setTimeout(() => {
+      splash.style.display = 'none';
+    }, 1000); // tunggu animasi selesai
+  }
+</script>
+
+  
+    <section id="tab-performance" class="tab-section active">
+
+  
+  <!-- System Info dan semua setting performance dari file kamu ditempatkan di sini -->
+    <div class="card3">
+<div class="bg-gray-900 text-white rounded-2xl p-4 shadow-lg w-full max-w-md mx-auto">
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center">
+      <img src="iconv1.webp" alt="Chipset Icon" class="w-10 h-10 rounded-full">
+      <div class="ml-3">
+        <p class="text-sm text-gray-400">Qualcomm</p>
+        <h2 class="text-xl font-bold text-white">Snapdragon</h2>
+      </div>
+    </div>
+  </div>  <!-- Grid Info -->  <div class="grid grid-cols-2 gap-3">
+    <!-- OS Version -->
+<div class="text-sm text-gray-500 mt-4">  
+    <div>OS: <span id="osVer" class="text-blue-500">Loading...</span></div>  
+    <div>Kernel: <span id="kernelVer" class="text-blue-500">Loading...</span></div>  
+    <div>Uptime: <span id="uptime" class="text-blue-500">Loading...</span></div>  
+    <div>Resolution: <span id="res" class="text-blue-500">Loading...</span></div>  
+    <div>CPU: <span id="cpu" class="text-blue-500">Loading...</span></div>  
+    <div>GPU: <span id="gpu" class="text-blue-500">Loading...</span></div>  
+    <div>Memory: <span id="mem" class="text-blue-500">Loading...</span></div>  
+    <p class="mt-2 text-sm text-black">System is configured for better performance. 🚀</p></div></div>
+  </div>  </div>
+      
+   
+      <div class="card">
+  <h1>Performance Settings</h1>
+  <p class="text-sm text-gray-500">⚙️Adjust settings to improve your device performance for better gaming experience SnapSPerf Official</p>
+                <h2 class="font-semibold mb-4 text-lg text-white text-center">               </h2>
+                </div>
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Enabled Fake Temp 5°c</h3>
+        <p class="text-sm text-gray-500">Fake your devices temperature</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="faketemp">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+  
+       <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white"> hardware composer</h3>
+        <p class="text-sm text-gray-500">Efficient rendering via GPU, reduce CPU load.</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="hwcToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+    </div>
+
+<div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Power keeper xioami perf</h3>
+        <p class="text-sm text-gray-500">This feature for xioami rom miui/hyperos</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="PowerKeeperToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Disabled Ufshc Power Saving</h3>
+        <p class="text-sm text-gray-500">Turn off ufshc power saving</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="ufshcPowerSaving">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Disabled logging cache with cmd</h3>
+        <p class="text-sm text-gray-500">Turn off logging with the command</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="cmdLoggingToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Disabled Thermal PS + HAL2.0</h3>
+        <p class="text-sm text-gray-500">Turn off thermal process status</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="Thermalv3Toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Enabled Dual 20MHz=40Mhz On 2.4GHz WiFi</h3>
+        <p class="text-sm text-gray-500">Fast high speed for your wifi</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="wifi40mhzToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Disabled GPU Throttling</h3>
+        <p class="text-sm text-gray-500">Disable throttling your GPU</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="gpuThrottlingToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Enabled CMD Performance</h3>
+        <p class="text-sm text-gray-500">Using commands to improve performance</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="autoPerfToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Disable Qcom LPM</h3>
+        <p class="text-sm text-gray-500">Performance enhancements can improve system performance by removing limitations imposed by LPM</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="qcomLpmToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Enabled 120hz if Off Turned 60hz</h3>
+        <p class="text-sm text-gray-500">Change hz speed</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="120hzToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Disabled Efficiency</h3>
+        <p class="text-sm text-gray-500">Efficient is turned off for performance</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="PowerEfficiencyToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Disabled logger</h3>
+        <p class="text-sm text-gray-500">Stop the logging process</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="KillLoGToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Enabled Speed Mode</h3>
+        <p class="text-sm text-gray-500">Turn on speed mode developer options</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="SpeedModeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Disabled Kernel Panic</h3>
+        <p class="text-sm text-gray-500">Prevents the device from automatically rebooting</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="KernelPanicToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Enabled Xiaomi Perfmgr</h3>
+        <p class="text-sm text-gray-500">Optimize or reduce power usage(For Daily)</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="PerfmgrToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Sched Energy Aware</h3>
+        <p class="text-sm text-gray-500">Enabled efficient energy (Daily)</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="schedEnergyAwareToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Unlock 120FPS Mobile Legends</h3>
+        <p class="text-sm text-gray-500">Unlock 120hz on mobile legends games</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="mlbb120fpsToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+
+  <div class="card">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <div>
+        <h3 class="text-base font-semibold text-black dark:text-white">Kernel Entropy Maximum</h3>
+        <p class="text-sm text-gray-500">Improve Maximum Kernel Entropy</p>
+      </div>
+      <div class="ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="entropyToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </label>
+  </div>
+  
+  <div class="card flex justify-between items-center">
+  <div>
+    <h3 class="text-base font-semibold">Kernel Max Threads</h3>
+    <p class="text-sm text-gray-500">Maximum number of threads</p>
+  </div>
+  <select id="KernelModeSelect" class="ml-4 px-2 py-1 border rounded-md text-sm bg-gray-700 text-white">
+    <option value="Lowered">Lowered</option>
+    <option value="normal" selected>Normal</option>
+    <option value="Boosted">Boosted</option>
+    <option value="extreme">Extreme</option>
+  </select>
+</div>
+  </div>
+</div>
+
+<div class="p-6">
+            <!-- CPU & Thermal Settings -->
+                        <div class="card">
+                <h2 class="font-semibold mb-4 text-lg text-black text-center">Custom Settings</h2>
+<p class="text-sm text-gray-500">👾Customize Everything This Features, As You Like It! Saturation, Cmd Your Games Thermal Limit, Unlock 6GHz Hotspots, Kgsl Busmon Governor, Cpu Governor</p>
+ </div>
+
+                
+            <!-- UPDATE -->
+<!-- CMD GAME DOWNSCALE -->
+<div class="card">
+    <h2 class="text-base font-semibold text-black dark:text-white">CMD GAME DOWNSCALE</h2>
+    <input type="text" id="packageName" placeholder="Enter the game package name" class="w-full p-2 rounded bg-gray-800 text-white mb-3" />
+    <button onclick="onEnter()" class="w-full bg-blue-400 text-white rounded-md py-2 mb-4">Enter cmd package games</button>
+
+<div id="mode-select" class="section" style="display:none;">
+  <h3>Select Mode</h3>
+  <div class="radio-group">
+    <label><input type="radio" name="mode" value="2" checked> Performance</label>
+    <label><input type="radio" name="mode" value="3" checked> Battery</label>
+    <label><input type="radio" name="mode" value="4" checked> Custom</label>
+  </div>
+</div>
+
+<div id="downscale-ui" class="section" style="display:none;">
+  <h3>Downscale (Resolution)</h3>
+  <div class="slider-wrap">
+    <input type="range" id="downscale" min="0.1" max="1" step="0.05" value="1">
+    <span id="downscaleVal">1.0</span>
+  </div>
+</div>
+
+<div id="fps-ui" class="section" style="display:none;">
+  <h3>FPS</h3>
+  <div class="slider-wrap">
+    <input type="range" id="fps" min="0" max="240" step="1" value="60">
+    <span id="fpsVal">60</span>
+  </div>
+</div>
+
+<div id="done-section" class="hidden mt-4 space-y-2">
+      <button onclick="onDone()" class="w-full bg-green-600 text-white py-2 rounded">Apply</button>
+      <button onclick="onReset()" class="w-full bg-gray-500 text-white py-2 rounded">Reset to Default</button>
+      <p id="status" class="text-white text-sm"></p>
+    </div>
+    </div>
+
+
+<script src="script.js"></script>
+
+
+<!-- Saturation Slider -->
+<div class="card">
+  <div class="flex items-center">
+<h2 class="text-base font-semibold text-black dark:text-white">🎨Display Saturation</h2>
+    <input type="range" id="saturationSlider" min="10" max="20" step="1" value="10" class="ml-auto w-2/3 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+    <span id="saturationValue" class="text-white ml-3 text-sm">1.0</span>
+  </div>
+  </div>
+
+<!-- Thermal Limit Slider -->
+<div class="card">
+  <div class="flex items-center">
+<h2 class="text-base font-semibold text-black dark:text-white">♨️Thermal Limit</h2>
+    <input type="range" id="thermalSlider" min="30" max="200" step="10" value="150" class="ml-auto w-2/3 h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+    <span id="thermalValue" class="text-white ml-3 text-sm">150</span>
+</div>
+  </div>
+
+  <div class="card">
+  <div class="flex items-center">
+    <label class="cursor-pointer inline-flex items-center w-full">
+      <h2 class="text-base font-semibold text-black dark:text-white">Unlock 6ghz hotspot</h2>
+      <div class="ml-auto">
+        <button id="selectCountryBtn" class="ml-auto bg-gray-600 hover:bg-gray-500 text-white text-sm font-medium px-4 py-1.5 rounded-lg shadow">Select Country</button>
+      </div>
+    </label>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="card">
+<div id="countryModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="card">
+    <h2 class="text-lg font-bold mb-2 text-white">Select Country Code</h2>
+    <select id="countrySelect" class="w-full p-2 border border-gray-600 rounded mb-4 bg-gray-700 text-white">
+      <!-- Options will be populated by script.js -->
+    </select>
+    <div class="flex justify-end">
+      <button id="cancelCountryBtn" class="mr-2 px-3 py-1 bg-gray-600 hover:bg-gray-500 text-white rounded transition-colors">Cancel</button>
+      <button id="applyCountryBtn" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded transition-colors">Apply</button>
+    </div>
+  </div>
+</div>
+
+                
+<!-- Governor Selector -->
+  <div class="flex items-center">
+    <h2 class="text-base font-semibold text-black dark:text-white">Busmon governor</h2>
+    <button id="busmonGovernorToggle" class="ml-auto bg-gray-600 hover:bg-gray-500 text-white text-sm font-medium px-4 py-1.5 rounded-lg shadow">
+      Select Governor
+    </button>
+      </div>
+    </label>
+  </div>
+</div>
+
+
+
+<!-- Modal Busmon -->
+<div id="busmonGovernorModal" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
+  <div class="card">
+    <h2 class="text-white text-lg font-semibold mb-4">Kgsl Busmon Governor</h2>
+    <div id="busmonGovernorOptions" class="space-y-2"></div>
+    <button id="closeBusmonGovernor" class="mt-5 w-full bg-red-600 hover:bg-red-500 text-white py-2 rounded-lg">Cancel</button>
+  </div>
+</div>
+
+
+<!-- CPU Governor Selector -->
+<div class="card">
+  <div class="flex items-center">
+    <h2 class="text-base font-semibold text-black dark:text-white">Cpu governor</h2>
+    <button id="cpuGovernorToggle" class="ml-auto bg-gray-600 hover:bg-gray-500 text-white text-sm font-medium px-4 py-1.5 rounded-lg shadow">
+      Select Governor
+    </button>
+        </div>
+    </label>
+  </div>
+</div>
+
+<!-- Modal CPU -->
+<div id="cpuGovernorModal" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50">
+  <div class="card">
+    <h2 class="text-white text-lg font-semibold mb-4">CPU GOVERNOR</h2>
+    <div id="cpuGovernorOptions" class="space-y-2"></div>
+    <button id="closeCpuGovernor" class="mt-5 w-full bg-red-600 hover:bg-red-500 text-white py-2 rounded-lg">Cancel</button>
+        </div>
+    </label>
+  </div>
+</div>
+                    
+  <div class="footer">SnapSPerf UI - Performance</div>
+  </section>
+  
+    <!-- MEMORY TAB -->
+  <section id="tab-memory" class="tab-section">
+  <div class="card">
+                <h2 class="font-semibold mb-4 text-lg text-black text-center">Memory Settings</h2>
+<p class="text-sm text-gray-500">⚙️Adjust settings to improve your device performance for better gaming experience SnapSPerf Official</p>
+                <h2 class="font-semibold mb-4 text-lg text-white text-center">               </h2>
+                <div class="flex justify-between items-center">
+  <div>
+    <h3 class="text-base font-semibold">Choose nr request</h3>
+    <p class="text-sm text-gray-500">Select the nr requests size for the queue</p>
+  </div>
+  <select id="nrRequestsSelect" class="ml-4 px-2 py-1 border rounded-md text-sm bg-gray-700 text-white">
+    <option value="256">256KB</option>
+    <option value="512" selected>512KB</option>
+    <option value="1024">1024KB</option>
+    <option value="2048">2048KB</option>
+  </select>
+</div>
+
+
+<div class="flex justify-between items-center">
+  <div>
+    <h3 class="text-base font-semibold">Choose read ahead KB</h3>
+    <p class="text-sm text-gray-500">Select the read ahead size for the queue</p>
+  </div>
+  <select id="readAheadSelect" class="ml-4 px-2 py-1 border rounded-md text-sm bg-gray-700 text-white">
+    <option value="64">64KB</option>
+    <option value="128" selected>128KB</option>
+    <option value="256">256KB</option>
+    <option value="512">512KB</option>
+  </select>
+</div>
+    </div>
+  </label>
+</div>
+
+  <div class="card">
+  <label class="cursor-pointer inline-flex items-center w-full">
+    <div>
+      <h3 class="text-base font-semibold text-black dark:text-white">Fstrim your device</h3>
+      <p class="text-sm text-gray-500">Clean up empty blocks on storage to keep performance optimal</p>
+    </div>
+    <div class="ml-auto">
+      <label class="switch">
+        <input type="checkbox" id="FstrimToggle">
+        <span class="slider"></span>
+     </div>
+    </div>
+  
+  <div class="card">
+  <label class="cursor-pointer inline-flex items-center w-full">
+    <div>
+      <h3 class="text-base font-semibold text-black dark:text-white">Disabled I/O Stats</h3>
+      <p class="text-sm text-gray-500">Can't see who is making the storage busy, but the system is lighter</p>
+    </div>
+    <div class="ml-auto">
+      <label class="switch">
+        <input type="checkbox" id="IOStatsToggle">
+        <span class="slider"></span>
+</div>
+    </div>
+  </label>
+</div>
+
+<div class="card">
+                <div class="flex justify-between items-center">
+  <div>
+    <h3 class="text-base font-semibold">ZRAM Configuration</h3>
+    <p class="text-sm text-gray-500">Compression algorithm lz4</p>
+  </div>
+  <div class="ml-4">
+    <button id="disableZramButton" class="px-4 py-2 text-sm bg-gray-700 text-white rounded-md hover:bg-gray-600">
+      Disable ZRAM
+    </button>
+    <button id="configureZram8GBButton" class="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-500">
+      Enable ZRAM 8 GB
+    </button>
+    <button id="configureZram24GBButton" class="px-4 py-2 text-sm bg-green-600 text-white rounded-md hover:bg-green-500">
+      Enable ZRAM 24 GB
+    </button>
+  </div>
+</div>
+    </div>
+  </label>
+</div></div>
+
+<div class="card">
+    <div class="flex items-center p-4">
+        <h2 class="text-base font-semibold text-black dark:text-white">Watermark scale factor</h2>
+        <input type="range" id="WsFSlider" min="1" max="100" step="1" value="100" class="rounded-none ml-auto mr-2 w-2/3">
+        <span id="WsFValue" class="text-white ml-2"></span>
+    </div>
+</div>
+</div>
+
+<div class="card">
+    <div class="flex items-center p-4">
+        <h2 class="text-base font-semibold text-black dark:text-white">Vfs cache pressure</h2>
+        <input type="range" id="VfsSlider" min="1" max="100" step="1" value="100" class="rounded-none ml-auto mr-2 w-2/3">
+        <span id="VfsValue" class="text-white ml-2"></span>
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="flex items-center p-4">
+<h2 class="text-base font-semibold text-black dark:text-white">Swappiness adjust</h2>
+        <input type="range" id="swappinessSlider" min="1" max="100" step="1" value="100" class="rounded-none ml-auto mr-2 w-2/3">
+        <span id="swappinessValue" class="text-white ml-2"></span>
+    </div>
+</div>
+  
+<div class="card">
+    <label for="ioSchedulerToggle" class="cursor-pointer inline-flex items-center w-full">
+        <h2 class="text-base font-semibold text-black dark:text-white">I/O Schduler</h2>
+        <div class="ml-auto">
+            <button id="ioSchedulerToggle" class="bg-gray-700 text-white px-3 py-1 rounded-md">Select Scheduler</button>
+        </div>
+    </label>
+</div>
+
+<!-- Modal I/O Scheduler -->
+<div id="ioSchedulerModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 hidden flex items-center justify-center">
+    <div class="card">
+        <h2 class="text-white text-lg font-semibold mb-3">I/O SCHEDULR</h2>
+        <div id="ioSchedulerOptions" class="space-y-2">
+            <!-- Opsi akan diisi via JavaScript -->
+        </div>
+        <button id="closeIoScheduler" class="mt-4 w-full bg-red-600 text-white py-1 rounded-md">Cancel</button>
+    </div>
+</div>
+
+<div class="card">
+<label for="ufsGovernorToggle" class="cursor-pointer inline-flex items-center w-full">
+        <h2 class="text-white text-lg font-semibold mb-3">UFS Governor</h2>
+    <div class="ml-auto">
+        <button id="ufsGovernorToggle" class="bg-gray-700 text-white px-3 py-1 rounded-md">Select Governor</button>
+    </div>
+</label>
+
+<!-- Modal UFS Governor -->
+<div id="ufsGovernorModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 hidden flex items-center justify-center">
+    <div class="card">
+        <h2 class="text-white text-lg font-semibold mb-3">UFS GOVERNOR</h2>
+        <div id="ufsGovernorOptions" class="space-y-2">
+            <!-- Opsi diisi via JavaScript -->
+        </div>
+        <button id="closeUfsGovernor" class="mt-4 w-full bg-red-600 text-white py-1 rounded-md">Cancel</button>
+      </div>
+    </label>
+  </div>
+</div>
+  <div class="footer">SnapSPerf UI - Memory</div>
+  </section>
+  
+  <!-- ROCKET TAB -->
+  <section id="tab-rocket" class="tab-section">
+  <div class="card">
+                <h2 class="font-semibold mb-4 text-lg text-black text-center">MISCELLANEOUS</h2>
+  
+<p class="text-sm text-gray-500">Additional settings that you can use for tuning</p>
+                <h2 class="font-semibold mb-4 text-lg text-white text-center">               </h2></div>
+<div class="card">
+    <h2 class="text-base font-semibold text-black dark:text-white">Debloat APK</h2>
+    <input type="text" id="packageName" placeholder="Enter package name" class="w-full p-2 rounded bg-gray-800 text-white mb-3" />
+    <button onclick="onUninstall()" class="w-full bg-red-500 text-white rounded-md py-2 mb-4">Uninstall APK</button>
+    <p id="status2" class="text-white text-sm"></p>
+</div>
+
+<script src="script.js"></script>
+  
+  <div class="footer">SnapSPerf UI - Author</div>
+  
+  </section>
+  <!-- AUTHOR TAB -->
+  <section id="tab-author" class="tab-section">
+  <!-- YouTube Card -->
+  <div class="card p-4 rounded-lg shadow-md" style="background-image: url('youtube.webp'); background-size: cover; background-position: center;">
+    <div class="bg-black bg-opacity-60 p-4 rounded-lg">
+      <h2 class="text-white text-xl font-bold">YouTube</h2>
+      <p class="text-white text-sm">Channel video gameplay for games and other</p>
+      <a href="https://youtube.com/@zuanvfx" target="_blank" class="text-white text-sm mt-2 inline-block">Kunjungi YouTube</a>
+    </div>
+  </div>
+
+  <!-- TikTok Card -->
+  <div class="card p-4 rounded-lg shadow-md" style="background-image: url('tiktok.webp'); background-size: cover; background-position: center;">
+    <div class="bg-black bg-opacity-60 p-4 rounded-lg">
+      <h2 class="text-white text-xl font-bold">TikTok</h2>
+      <p class="text-white text-sm">Just a random video, gameplay games my favorite</p>
+      <a href="https://www.tiktok.com/@zuanvfx4?_t=ZS-8va1gE8T0Tq&_r=1" target="_blank" class="text-white text-sm mt-2 inline-block">Kunjungi TikTok</a>
+    </div>
+  </div>
+
+  <!-- Instagram Card -->
+  <div class="card p-4 rounded-lg shadow-md" style="background-image: url('instagram.webp'); background-size: cover; background-position: center;">
+    <div class="bg-black bg-opacity-60 p-4 rounded-lg">
+      <h2 class="text-white text-xl font-bold">Instagram</h2>
+      <p class="text-white text-sm">Just to see Instagram content lmaoo</p>
+      <a href="https://www.instagram.com/realzuanvfx?igsh=MWhxNmFwOXJidHU2aQ==" target="_blank" class="text-white text-sm mt-2 inline-block">Kunjungi Instagram</a>
+    </div>
+  </div>
+
+  <!-- Telegram Card -->
+  <div class="card p-4 rounded-lg shadow-md" style="background-image: url('telegram.webp'); background-size: cover; background-position: center;">
+    <div class="bg-black bg-opacity-60 p-4 rounded-lg">
+      <h2 class="text-white text-xl font-bold">Telegram</h2>
+      <p class="text-white text-sm">Join the group for magisk module update info, discussions, and the snapsperf project.</p>
+      <a href="https://t.me/ZuanVFX" target="_blank" class="text-white text-sm mt-2 inline-block">Gabung Telegram</a>
+    </div>
+  </div>
+  
+<div class="card mb-4 p-4 rounded-lg shadow-md" style="background-image: url('support-bg.webp'); background-size: cover; background-position: center;">
+  <div class="bg-black bg-opacity-60 p-4 rounded-lg">
+    <h2 class="font-semibold mb-4 text-lg text-blue-400 text-center">Author Support</h2>
+    
+    <button id="donateButton" class="bg-gray-700 hover:bg-gray-600 px-7 py-1 rounded-md text-lg text-white shadow-md w-full mb-4 text-center">
+  Donate DM
+</button>
+    
+    <a href="https://t.me/SnapSPerf" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-7 py-1 rounded-md text-lg text-white shadow-md w-full text-center block text-center">
+  Join Channel Telegram @SnapSPerF
+</a>
+                    </div>
+                    </div>
+    <div class="footer">SnapSPerf UI - Author</div>
+  </section>
+  
+    <!-- NEWS TAB -->
+  <section id="tab-news" class="tab-section">
+  </section>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav-material">
+    <div class="nav-item active" onclick="switchTab('performance', this)">
+      <i class="material-icons">speed</i>
+      <span>Perf</span>
+    </div>
+    <div class="nav-item" onclick="switchTab('memory', this)">
+      <i class="material-icons">memory</i>
+      <span>Memory</span>
+    </div>
+    <!-- Floating Action Button for Rocket -->
+<div class="fab-button" onclick="switchTab('rocket', this)">
+  <i class="material-icons">rocket_launch</i>
+</div>
+    <div class="nav-item" onclick="switchTab('author', this)">
+      <i class="material-icons">person</i>
+      <span>Author</span>
+    </div>
+    <div class="nav-item" onclick="switchTab('news', this)">
+      <i class="material-icons">notifications</i>
+      <span>News</span>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchTab(tab, el) {
+      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.bottom-nav-material .nav-item').forEach(btn => btn.classList.remove('active'));
+
+      const target = document.getElementById(`tab-${tab}`);
+      if (target) target.classList.add('active');
+      if (el) el.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
