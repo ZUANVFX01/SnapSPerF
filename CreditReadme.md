@@ -15,7 +15,7 @@ This Magisk module optimizes memory management (VM), CPU, GPU, UFSHC, ZRAM, I/O 
 
 Credits
 Thank you for your help me, 
-@("永遠先考慮自己"), Other @Riprog @Anhsnguyetj @tytydraco, 莱辣, 小贱, 酷安@澪度Pro, 酷安@忘心酱_B站＆心意难寻の忘心, 酷安peiilii, yervant7, @MiAzami, Mr. Double R/@rakarizaldy , @EmanuelCN01, @yuuta27, @Kzuyoo, @SutoLiu, @ztc1997, Matt Yang, Pedro-KTSR.
+@("永遠先考慮自己"), Other @Riprog @Anhsnguyetj @tytydraco, 莱辣, 小贱, 酷安@澪度Pro, 酷安@忘心酱_B站＆心意难寻の忘心, 酷安peiilii, yervant7, @MiAzami, Mr. Double R/@rakarizaldy , @EmanuelCN01, @yuuta27, @Kzuyoo, @SutoLiu, @ztc1997, Matt Yang, Pedro-KTSR, Asphyxia/苏疫杆菌, Kernel Pandora Project For System prop.
 Spesial thanks
 • [Emanuel](https://t.me/EmanuelCN0)
 • [Zackptg5 for the MMT-Ex template](https://github.com/Zackptg5)
