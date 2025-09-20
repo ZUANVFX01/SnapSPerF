@@ -12,7 +12,7 @@ This Magisk module optimizes memory management (VM), CPU, GPU, UFSHC, ZRAM, I/O 
 
 Credits
 Thank you for your help me, 
-(See in module magisk readme.nd)
+• [CreditReadme.md](https://github.com/ZUANVFX01/SnapSPerF/blob/main/CreditReadme.md)
 Other Spesial thanks
 • [Topjohnwu for making Magisk](https://github.com/topjohnwu)
 Thanks Android Materials UI/UX
